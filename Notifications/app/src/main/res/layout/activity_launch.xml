@@ -96,6 +96,42 @@
 
                 </TableRow>
 
+                <TableRow style="@style/LegendRow">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Primary Action Icon"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:background="@color/colorPrimary"
+                        android:src="@drawable/ic_action_primary" />
+
+                </TableRow>
+
+                <TableRow style="@style/LegendRow">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Alternate Action Icon"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:background="@color/colorPrimary"
+                        android:src="@drawable/ic_action_alt" />
+
+                </TableRow>
+
                 <TableRow style="@style/LegendRowHeader">
 
                     <TextView
@@ -168,6 +204,38 @@
                         android:layout_height="wrap_content"
                         android:gravity="right"
                         android:text="@string/content_huge_text" />
+
+                </TableRow>
+
+                <TableRow style="@style/LegendRow">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Primary Action"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/primary_action_text" />
+
+                </TableRow>
+
+                <TableRow style="@style/LegendRow">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Alt Action"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/alt_action_text" />
 
                 </TableRow>
 

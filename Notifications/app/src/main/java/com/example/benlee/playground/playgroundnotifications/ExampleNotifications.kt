@@ -22,6 +22,8 @@ fun launch_Simple_Default(context: Context) {
                     .setSmallIcon(R.drawable.ic_small_icon)
                     .setContentTitle(context.getString(R.string.content_title))
                     .setContentText(context.getString(R.string.content_small_text))
+                    .setContentIntent(context.pendingItentToLaunchActivity())
+                    .setAutoCancel(true)
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
     )
 }
@@ -34,6 +36,8 @@ fun launch_Simple_High(context: Context) {
                     .setSmallIcon(R.drawable.ic_small_icon)
                     .setContentTitle(context.getString(R.string.content_title))
                     .setContentText(context.getString(R.string.content_small_text))
+                    .setContentIntent(context.pendingItentToLaunchActivity())
+                    .setAutoCancel(true)
                     .setPriority(NotificationCompat.PRIORITY_HIGH)
     )
 }
@@ -46,7 +50,86 @@ fun launch_Simple_Low(context: Context) {
                     .setSmallIcon(R.drawable.ic_small_icon)
                     .setContentTitle(context.getString(R.string.content_title))
                     .setContentText(context.getString(R.string.content_small_text))
+                    .setContentIntent(context.pendingItentToLaunchActivity())
+                    .setAutoCancel(true)
                     .setPriority(NotificationCompat.PRIORITY_LOW)
+    )
+}
+
+fun launch_Large(context: Context) {
+    setupNotificationChannelsForOreoAndHigher(context)
+
+    showNotification(
+            NotificationCompat.Builder(context, DEFAULT_CHANNEL_1)
+                    .setSmallIcon(R.drawable.ic_small_icon)
+                    .setContentTitle(context.getString(R.string.content_title))
+                    .setContentText(context.getString(R.string.content_large_text))
+                    .setContentIntent(context.pendingItentToLaunchActivity())
+                    .setAutoCancel(true)
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+    )
+}
+
+fun launch_Huge(context: Context) {
+    setupNotificationChannelsForOreoAndHigher(context)
+
+    showNotification(
+            NotificationCompat.Builder(context, DEFAULT_CHANNEL_1)
+                    .setSmallIcon(R.drawable.ic_small_icon)
+                    .setContentTitle(context.getString(R.string.content_title))
+                    .setContentText(context.getString(R.string.content_huge_text))
+                    .setStyle(NotificationCompat.BigTextStyle()
+                            .bigText(context.getString(R.string.content_huge_text)))
+                    .setContentIntent(context.pendingItentToLaunchActivity())
+                    .setAutoCancel(true)
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+    )
+}
+
+fun launch_LargeToHuge(context: Context) {
+    setupNotificationChannelsForOreoAndHigher(context)
+
+    showNotification(
+            NotificationCompat.Builder(context, DEFAULT_CHANNEL_1)
+                    .setSmallIcon(R.drawable.ic_small_icon)
+                    .setContentTitle(context.getString(R.string.content_title))
+                    .setContentText(context.getString(R.string.content_large_text))
+                    .setStyle(NotificationCompat.BigTextStyle()
+                            .bigText(context.getString(R.string.content_huge_text)))
+                    .setContentIntent(context.pendingItentToLaunchActivity())
+                    .setAutoCancel(true)
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+    )
+}
+
+fun launch_WithSingleAction(context: Context) {
+    setupNotificationChannelsForOreoAndHigher(context)
+
+    showNotification(
+            NotificationCompat.Builder(context, DEFAULT_CHANNEL_1)
+                    .setSmallIcon(R.drawable.ic_small_icon)
+                    .setContentTitle(context.getString(R.string.content_title))
+                    .setContentText(context.getString(R.string.content_small_text))
+                    .setContentIntent(context.pendingItentToLaunchActivity())
+                    .setAutoCancel(true)
+                    .addAction(R.drawable.ic_action_primary, context.getString(R.string.primary_action_text), context.pendingItentToLaunchActivity())
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+    )
+}
+
+fun launch_WithDualActions(context: Context) {
+    setupNotificationChannelsForOreoAndHigher(context)
+
+    showNotification(
+            NotificationCompat.Builder(context, DEFAULT_CHANNEL_1)
+                    .setSmallIcon(R.drawable.ic_small_icon)
+                    .setContentTitle(context.getString(R.string.content_title))
+                    .setContentText(context.getString(R.string.content_small_text))
+                    .setContentIntent(context.pendingItentToLaunchActivity())
+                    .setAutoCancel(true)
+                    .addAction(R.drawable.ic_action_primary, context.getString(R.string.primary_action_text), context.pendingItentToLaunchActivity())
+                    .addAction(R.drawable.ic_action_alt, context.getString(R.string.alt_action_text), context.pendingItentToLaunchActivity())
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
     )
 }
 

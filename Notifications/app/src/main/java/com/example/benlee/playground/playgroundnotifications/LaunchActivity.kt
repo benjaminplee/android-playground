@@ -1,6 +1,8 @@
 package com.example.benlee.playground.playgroundnotifications
 
+import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
@@ -11,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_launch.*
 import kotlinx.android.synthetic.main.launcher.view.*
+
 
 class LaunchActivity : AppCompatActivity() {
 
@@ -27,11 +30,19 @@ class LaunchActivity : AppCompatActivity() {
                 listOf(
                         "Simple: Default" to ::launch_Simple_Default,
                         "Simple: High" to ::launch_Simple_High,
-                        "Simple: Low" to ::launch_Simple_Low
+                        "Simple: Low" to ::launch_Simple_Low,
+                        "Large Text" to ::launch_Large,
+                        "Huge Text" to ::launch_Huge,
+                        "Large to Huge Text" to ::launch_LargeToHuge,
+                        "With Single Action Btn"  to ::launch_WithSingleAction,
+                        "With Dual Action Btns" to ::launch_WithDualActions
                 )
         )
     }
 }
+
+fun Context.pendingItentToLaunchActivity(): PendingIntent =
+        PendingIntent.getActivity(this, 0, Intent(this, LaunchActivity::class.java), 0)
 
 class NotificationLauncherAdapter(private val context: Context, private val launchers: List<Pair<String, (Context) -> Unit>>) : RecyclerView.Adapter<NotificationViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotificationViewHolder =
