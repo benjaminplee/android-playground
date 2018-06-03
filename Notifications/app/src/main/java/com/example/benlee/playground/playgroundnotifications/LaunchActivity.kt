@@ -22,7 +22,7 @@ class LaunchActivity : AppCompatActivity() {
         panel.adapter = NotificationLauncherAdapter(
                 this,
                 listOf(
-                        "Simple" to ::launchSimpleNotification
+                        "Simplest" to ::launchSimplestNotification
                 )
         )
     }
