@@ -18,11 +18,16 @@ class LaunchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launch)
 
+        switchToLegendButton.setOnClickListener { switcher.showNext() }
+        switchToLaunchers.setOnClickListener { switcher.showPrevious() }
+
         panel.layoutManager = LinearLayoutManager(this)
         panel.adapter = NotificationLauncherAdapter(
                 this,
                 listOf(
-                        "Simplest" to ::launchSimplestNotification
+                        "Simple: Default" to ::launch_Simple_Default,
+                        "Simple: High" to ::launch_Simple_High,
+                        "Simple: Low" to ::launch_Simple_Low
                 )
         )
     }

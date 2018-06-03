@@ -14,20 +14,39 @@ private const val DEFAULT_CHANNEL_1 = "DEFAULTCHANNEL1"
 private const val HIGH_IMPORTANCE_CHANNEL_2 = "HIGHCHANNEL2"
 private const val LOW_IMPORTANCE_CHANNEL_3 = "LOWCHANNEL3"
 
-private const val SMALL_ICON = R.drawable.ic_small_icon
-private const val LARGE_ICON = R.drawable.ic_large_icon
-private const val TITLE = "The Title"
-private const val CONTENT = "This is content text."
-
-fun launchSimplestNotification(context: Context) {
+fun launch_Simple_Default(context: Context) {
     setupNotificationChannelsForOreoAndHigher(context)
 
     showNotification(
             NotificationCompat.Builder(context, DEFAULT_CHANNEL_1)
-                    .setSmallIcon(SMALL_ICON)
-                    .setContentTitle(TITLE)
-                    .setContentText(CONTENT)
+                    .setSmallIcon(R.drawable.ic_small_icon)
+                    .setContentTitle(context.getString(R.string.content_title))
+                    .setContentText(context.getString(R.string.content_small_text))
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+    )
+}
+
+fun launch_Simple_High(context: Context) {
+    setupNotificationChannelsForOreoAndHigher(context)
+
+    showNotification(
+            NotificationCompat.Builder(context, HIGH_IMPORTANCE_CHANNEL_2)
+                    .setSmallIcon(R.drawable.ic_small_icon)
+                    .setContentTitle(context.getString(R.string.content_title))
+                    .setContentText(context.getString(R.string.content_small_text))
+                    .setPriority(NotificationCompat.PRIORITY_HIGH)
+    )
+}
+
+fun launch_Simple_Low(context: Context) {
+    setupNotificationChannelsForOreoAndHigher(context)
+
+    showNotification(
+            NotificationCompat.Builder(context, LOW_IMPORTANCE_CHANNEL_3)
+                    .setSmallIcon(R.drawable.ic_small_icon)
+                    .setContentTitle(context.getString(R.string.content_title))
+                    .setContentText(context.getString(R.string.content_small_text))
+                    .setPriority(NotificationCompat.PRIORITY_LOW)
     )
 }
 
